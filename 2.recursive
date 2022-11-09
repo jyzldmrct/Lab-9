@@ -1,0 +1,23 @@
+def newton(n, estimate = 1.0):
+    tolerance = 0.00001
+    estimate = (estimate + n / estimate) / 2
+    difference = abs(n - estimate ** 2)
+
+    if difference > tolerance:
+        estimate = newton(n, estimate)
+    return estimate
+
+def main():
+   
+    while True:
+        import math
+ 
+        n = input("Enter a number: ")
+        if n == "":
+             break
+        n = float(n)
+        
+        print("The square root using Newton's Method is: ", newton(n))
+        return()
+
+main()
